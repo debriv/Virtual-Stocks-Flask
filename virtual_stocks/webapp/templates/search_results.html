@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Sr.</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Symbol</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>{{ results.name }}</td>
+        <td>{{ results.price }}</td>
+        <td>{{ results.symbol }}</td>
+      </tr>
+</table>
+{% endblock content %}

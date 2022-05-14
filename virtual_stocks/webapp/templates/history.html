@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block content %}
+<legend class="h1 mb-4 text-center">Your Transactions</legend>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Symbol</th>
+        <th scope="col">Price</th>
+        <th scope="col">Shares</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        {% for user_stock in user_stock_list %}
+        <tr>
+          <td>{{ user_stock.stock_name }}</td>
+          <td>{{ user_stock.stock_key }}</td>
+          <td>${{ user_stock.stock_price }}</td>
+          <td>{{ user_stock.share }}</td>
+          <td>${{ user_stock.total_share_price }}</td>
+        </tr>
+        {% endfor %}
+        {% for user_stock_total in user_stock_total_list %}
+        <tr style="font-weight:bold">
+          <td>{{ user_stock_total.stock_name }}</td>
+          <td>{{ user_stock_total.stock_key }}</td>
+          <td>NA</td>
+          <td>{{ user_stock_total.shares }}</td>
+          <td>${{ user_stock_total.total }}</td>
+        </tr> 
+        {% endfor %}
+    </tbody>    
+
+      <tfoot>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="border-0 fw-bold text-end" >CASH</td>
+            <td class="border-0 w-bold text-end">${{ avl_funds }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="border-0 fw-bold text-end" >TOTAL</td>
+            <td class="border-0 w-bold text-end">${{ avl_funds }}</td>
+          </tr>
+      </tfoot>
+</table>
+{% endblock content %}
