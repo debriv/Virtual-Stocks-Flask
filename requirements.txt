@@ -2,7 +2,7 @@ bcrypt==3.2.0
 blinker==1.4
 cffi==1.15.0
 click==8.1.2
-dnspython==2.2.1
+dnspython==2.6.1
 email-validator==1.2.0
 Flask==2.3.2
 Flask-Bcrypt==1.0.1
